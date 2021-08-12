@@ -1,0 +1,143 @@
+$font-family:'Yanone Kaffeesatz', sans-serif;
+$primary-color: #A3DDCB;
+$secondary-color: #0A043C;
+$tertiary-color: #03506F;
+@mixin font-conf{
+    font-size: 20px;
+    font-family: $font-family;
+}
+@mixin fonttitle-conf {
+    font-size: 50px;
+    font-family: $font-family;
+}
+@mixin fontsubtitle-conf{
+    font-size: 25px;
+    font-family: $font-family;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.header{
+    height: 100px;
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__title{
+    @include fonttitle-conf();
+    color: $primary-color;
+}
+.main-body{
+    background-color: $tertiary-color;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    padding: 10px 5px;
+}
+.container{
+    background-color: $primary-color;
+    border-radius: 30px;
+    margin: 0px 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container__subtitle{
+    color: $secondary-color;
+    @include fontsubtitle-conf();
+}
+.container__form{
+    display: flex;
+    flex-direction: column;
+}
+.container__form--input-container{
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-color;
+    margin: 0px 5px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.container__form--input{
+    @include font-conf();
+    background-color: transparent;
+    outline: none;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    color: $primary-color;
+    border-bottom: solid 1px $primary-color;
+}
+.container__form--label{
+    color: $primary-color;
+    @include font-conf();
+}
+.container__form--input-check{
+    display: none;
+}
+.container__form--input-check:checked ~ .container__form--checkmark{
+    background-color: $tertiary-color;
+}
+.container__form--checkmark{
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: $primary-color;
+}
+.container__form--check-container{
+    position: relative;
+    padding-left: 20px;
+    color: $primary-color;
+    @include font-conf();
+    cursor: pointer;
+    margin: 5px 10px;
+}
+.footer{
+    background-color: $secondary-color;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer__subtitle{
+    @include fontsubtitle-conf();
+    color: $primary-color;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: #03506F;
+    }
+    .header{
+        height: 70px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    .header__title{
+        font-size: 25px;
+    }
+    .main-body{
+        scroll-snap-align: start;
+        min-height: calc(100vh - 140px);
+        display: flex;
+        flex-direction: column;
+    }
+    .main-body__container{
+        background: none;
+    }
+    .footer{
+        height: 70px;
+        border-radius: 10px 10px 0px 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__subtitle{
+        font-size: 17px;
+    }
+}

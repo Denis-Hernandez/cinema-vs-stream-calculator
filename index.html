@@ -12,10 +12,47 @@
     <header class="header">
         <h1 class="header__title">Gestion de pagos de Peliculas</h1>
     </header>
-    <section class="main">
-        <section class="main__container">
-            <form action="">
-                <input type="text">
+    <section class="main-body">
+        <section class="container">
+            <h2 class="container__subtitle">Series y Peliculas</h2>
+            <form class="container__form" action="">
+                <div class="container__form--input-container">
+                    <label class="container__form--label" for="productions_amount">Ingrese la cantidad de Series/Peliculas vistas por mes</label>
+                    <input class="container__form--input" id="productions_amount" type="number">
+                </div>
+            </form>
+        </section>
+        <section class="container">
+            <h2 class="container__subtitle">Servicios de Streaming</h2>
+            <form class="container__form" action="">
+                <div class="container__form--input-container">
+                    <label class="container__form--label">Seleccione los servicios de Streaming</label>
+
+                    <label class="container__form--check-container" for="option_1">
+                        <input class="container__form--input-check" type="checkbox" id="option_1">Netflix
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                    <label class="container__form--check-container" for="option_2">
+                        <input class="container__form--input-check" type="checkbox" id="option_2">Disney+
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                    <label class="container__form--check-container" for="option_3">
+                        <input class="container__form--input-check" type="checkbox" id="option_3">Prime Video
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                    <label class="container__form--check-container" for="option_4">
+                        <input class="container__form--input-check" type="checkbox" id="option_4">Paramount+
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                </div>
+            </form>
+        </section>
+        <section class="container">
+            <h2 class="container__subtitle">Balance</h2>
+            <form class="container__form" action="">
+                <div class="container__form--input-container"></div>
+                <label for="productions_amount">Ingrese la cantidad de Series/Peliculas vistas por mes</label>
+                <input id="productions_amount" type="text">
             </form>
         </section>
     </section>
