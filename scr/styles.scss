@@ -130,15 +130,17 @@ body{
         border-radius: 0px 0px 10px 10px;
     }
     .header__title{
-        font-size: 25px;
+        font-size: 30px;
+        font-weight: bold;
     }
     .main-body{
         scroll-snap-align: start;
-        max-height: calc(100vh - 160px);
+        max-height: calc(100vh - 140px);
         display: flex;
         flex-direction: column;
         align-items: stretch;
         overflow-y: scroll;
+        padding: 0;
     }
     .main-body__container{
         background: none;
@@ -148,7 +150,8 @@ body{
         padding: 0;
     }
     .container__subtitle{
-        font-size: 30px;
+        font-size: 25px;
+        font-weight: bold;
         color: $primary-color;
     }
     .container__form--input-container, .container__form--output-container{
@@ -159,20 +162,23 @@ body{
     .container__form--result-label, .container__form--input,
     .container__form--check-container{
         color: $secondary-color;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
+    }
+    .container__form--check-container{
+        padding-left: 17px;
     }
     .container__form--input{
         border-bottom: solid 2px $secondary-color;
     }
     .container__form--checkmark{
-        height: 18px;
-        width: 18px;
+        height: 16px;
+        width: 16px;
         background-color: $tertiary-color;
     }
     .container__form--input-check:checked ~ .container__form--checkmark{
         background-color: $primary-color;
-        border:solid 5px $tertiary-color;
+        border:solid 4px $tertiary-color;
         height: 8px;
         width: 8px;
     }

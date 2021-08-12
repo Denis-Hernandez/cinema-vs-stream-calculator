@@ -137,16 +137,18 @@ body {
   }
 
   .header__title {
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: bold;
   }
 
   .main-body {
     scroll-snap-align: start;
-    max-height: calc(100vh - 160px);
+    max-height: calc(100vh - 140px);
     display: flex;
     flex-direction: column;
     align-items: stretch;
     overflow-y: scroll;
+    padding: 0;
   }
 
   .main-body__container {
@@ -159,7 +161,8 @@ body {
   }
 
   .container__subtitle {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
     color: #A3DDCB;
   }
 
@@ -172,8 +175,12 @@ body {
 .container__form--result-label, .container__form--input,
 .container__form--check-container {
     color: #0A043C;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
+  }
+
+  .container__form--check-container {
+    padding-left: 17px;
   }
 
   .container__form--input {
@@ -181,14 +188,14 @@ body {
   }
 
   .container__form--checkmark {
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     background-color: #03506F;
   }
 
   .container__form--input-check:checked ~ .container__form--checkmark {
     background-color: #A3DDCB;
-    border: solid 5px #03506F;
+    border: solid 4px #03506F;
     height: 8px;
     width: 8px;
   }
