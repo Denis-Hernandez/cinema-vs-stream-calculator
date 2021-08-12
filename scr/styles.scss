@@ -33,17 +33,19 @@ body{
 }
 .main-body{
     background-color: $tertiary-color;
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 220px);
     display: flex;
     padding: 10px 5px;
+    align-items: center;
 }
 .container{
     background-color: $primary-color;
-    border-radius: 30px;
+    border-radius: 15px;
     margin: 0px 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 15px;
 }
 .container__subtitle{
     color: $secondary-color;
@@ -53,13 +55,14 @@ body{
     display: flex;
     flex-direction: column;
 }
-.container__form--input-container{
+.container__form--input-container,.container__form--output-container{
     display: flex;
     flex-direction: column;
     background-color: $secondary-color;
-    margin: 0px 5px;
+    margin: 0px 5px 10px 5px;
     border-radius: 10px;
     padding: 5px;
+    width: calc((100vw - 100px ) / 3);
 }
 .container__form--input{
     @include font-conf();
@@ -71,9 +74,16 @@ body{
     color: $primary-color;
     border-bottom: solid 1px $primary-color;
 }
-.container__form--label{
+.container__form--label,.container__form--output-label,.container__form--result-label{
     color: $primary-color;
     @include font-conf();
+}
+.container__form--output-label{
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.container__form--result-label{
+    padding-left: 20px;
 }
 .container__form--input-check{
     display: none;
@@ -124,12 +134,47 @@ body{
     }
     .main-body{
         scroll-snap-align: start;
-        min-height: calc(100vh - 140px);
+        max-height: calc(100vh - 160px);
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+        overflow-y: scroll;
     }
     .main-body__container{
         background: none;
+    }
+    .container{
+        background-color: transparent;
+        padding: 0;
+    }
+    .container__subtitle{
+        font-size: 30px;
+        color: $primary-color;
+    }
+    .container__form--input-container, .container__form--output-container{
+        width: calc(100vw - 75px );
+        background-color: $primary-color;
+    }
+    .container__form--label, .container__form--output-label,
+    .container__form--result-label, .container__form--input,
+    .container__form--check-container{
+        color: $secondary-color;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .container__form--input{
+        border-bottom: solid 2px $secondary-color;
+    }
+    .container__form--checkmark{
+        height: 18px;
+        width: 18px;
+        background-color: $tertiary-color;
+    }
+    .container__form--input-check:checked ~ .container__form--checkmark{
+        background-color: $primary-color;
+        border:solid 5px $tertiary-color;
+        height: 8px;
+        width: 8px;
     }
     .footer{
         height: 70px;

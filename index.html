@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de pagos de Peliculas | Platzi Reto 1</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./scr/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+    <script src="./scr/index.js"></script>
 </head>
 <body>
     <header class="header">
@@ -18,7 +19,11 @@
             <form class="container__form" action="">
                 <div class="container__form--input-container">
                     <label class="container__form--label" for="productions_amount">Ingrese la cantidad de Series/Peliculas vistas por mes</label>
-                    <input class="container__form--input" id="productions_amount" type="number">
+                    <input class="container__form--input" id="productions_amount" oninput="compararPrecios()" type="number" placeholder="0">
+                </div>
+                <div class="container__form--input-container">
+                    <label class="container__form--label" for="productions_amount">Ingrese la cantidad de Series/Peliculas vistas por mes</label>
+                    <input class="container__form--input" id="cinema_price" oninput="compararPrecios()" type="number" value="5">
                 </div>
             </form>
         </section>
@@ -29,19 +34,27 @@
                     <label class="container__form--label">Seleccione los servicios de Streaming</label>
 
                     <label class="container__form--check-container" for="option_1">
-                        <input class="container__form--input-check" type="checkbox" id="option_1">Netflix
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="9" id="option_1">Netflix
                         <span class="container__form--checkmark"></span>
                     </label>
                     <label class="container__form--check-container" for="option_2">
-                        <input class="container__form--input-check" type="checkbox" id="option_2">Disney+
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="8" id="option_2">Disney+
                         <span class="container__form--checkmark"></span>
                     </label>
                     <label class="container__form--check-container" for="option_3">
-                        <input class="container__form--input-check" type="checkbox" id="option_3">Prime Video
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="10" id="option_3">Prime Video
                         <span class="container__form--checkmark"></span>
                     </label>
                     <label class="container__form--check-container" for="option_4">
-                        <input class="container__form--input-check" type="checkbox" id="option_4">Paramount+
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="5" id="option_4">Paramount+
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                    <label class="container__form--check-container" for="option_5">
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="15" id="option_5">HBO Max
+                        <span class="container__form--checkmark"></span>
+                    </label>
+                    <label class="container__form--check-container" for="option_6">
+                        <input class="container__form--input-check" oninput="compararPrecios()" type="checkbox" value="5" id="option_6">Apple TV
                         <span class="container__form--checkmark"></span>
                     </label>
                 </div>
@@ -50,9 +63,14 @@
         <section class="container">
             <h2 class="container__subtitle">Balance</h2>
             <form class="container__form" action="">
-                <div class="container__form--input-container"></div>
-                <label for="productions_amount">Ingrese la cantidad de Series/Peliculas vistas por mes</label>
-                <input id="productions_amount" type="text">
+                <div class="container__form--output-container">
+                    <label class="container__form--label">Diferencia</label>
+                    <label class="container__form--output-label">Mejor Opción</label>
+                    <label class="container__form--result-label" id="first-option">...</label>
+                    <label class="container__form--output-label">Segunda Opción</label>
+                    <label class="container__form--result-label" id="second-option">...</label>
+                </div>
+                
             </form>
         </section>
     </section>
