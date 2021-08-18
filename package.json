@@ -1,0 +1,19 @@
+{
+  "name": "movie-management-system",
+  "version": "1.0.0",
+  "description": "Este programa simula el gasto mensual de entradas de Cine vs Gasto en Plataformas de Streaming. Tomando como referencia la cantidad de Producciones (Peliculas/Series) que el usuario estima ver en un mes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denis-Hernandez/movie-management-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Denis-Hernandez/movie-management-system/issues"
+  },
+  "homepage": "https://github.com/Denis-Hernandez/movie-management-system#readme"
+}
