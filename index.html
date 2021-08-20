@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
     <script src="./src/index.js"></script>
 </head>
-<body>
+<body onload="generateLists()">
     <header class="header">
         <h1 class="header__title">Gestion de pagos de Peliculas</h1>
     </header>
@@ -22,8 +22,14 @@
                     <input class="container__form--input" id="productions_amount" oninput="compararPrecios()" type="number" placeholder="0">
                 </div>
                 <div class="container__form--input-container">
-                    <label class="container__form--label" for="productions_amount">Precio de boleto</label>
+                    <label class="container__form--label" for="cinema_price">Precio de boleto</label>
                     <input class="container__form--input" id="cinema_price" oninput="compararPrecios()" type="number" value="5">
+                </div>
+                <div class="container__form--input-container list-container">
+                    <label class="container__form--label" for="currency">Divisa</label>
+                    <input class="container__form--input" id="currency" autocomplete="off" onfocus="displayList(this)" list="" name="currencies" readonly value="USD">
+                    <datalist class="list-container__list" id="currencies" role="listbox">
+                    </datalist>
                 </div>
             </form>
         </section>
@@ -32,7 +38,6 @@
             <form class="container__form" action="">
                 <div class="container__form--input-container" id="list-options">
                     <label class="container__form--label">Seleccione los servicios de Streaming</label>
-                    <script>generateListOfServices()</script>
                 </div>
             </form>
         </section>
@@ -52,6 +57,7 @@
     </section>
     <footer class="footer">
         <h3 class="footer__subtitle">Nunca pares de aprender</h3>
+        <a class="footer__link" href="https://github.com/Denis-Hernandez/cinema-vs-stream-calculator">Github</a>
     </footer>
 </body>
 </html>
